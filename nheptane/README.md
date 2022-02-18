@@ -5,5 +5,10 @@ Saved files should be limited to:
 - species dictionary
 - transport file
 - maybe the cti?
-- RMG log?
+
+
+Things that are too big and not worth it (keep these on Discovery):
+- anything related to the edge
+- RMG.log
+- seed mechanisms
 
