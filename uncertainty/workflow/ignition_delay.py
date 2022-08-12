@@ -1,6 +1,8 @@
 # Script to run ignition delay on a model
 import os
 import sys
+import logging  # for threadsafe file-writing
+
 
 import numpy as np
 import pandas as pd
@@ -9,17 +11,23 @@ import matplotlib.pyplot as plt
 import cantera as ct
 
 
-# model #
+# use the logging module for threadsafe result writing
+logpath = '/scratch/harris.se/autoscience/uncorrelated/ignition_delays.log'
+logger = logging.getLogger('log')
+logger.setLevel(logging.INFO)
+handle = logging.FileHandler(logpath)
+handle.setFormatter(logging.Formatter())
+logger.addHandler(handle)
+
+
+# Set the model #
 model_number = int(sys.argv[1])
 model_dir = '/scratch/harris.se/autoscience/uncorrelated/models'
 img_dir = '/scratch/harris.se/autoscience/uncorrelated/png'
 csv_dir = '/scratch/harris.se/autoscience/uncorrelated/csv'
 
 model_path = os.path.join(model_dir, f'chem_{model_number:04}.cti')
-
-# Load the model
-model_cti = '/work/westgroup/harris.se/autoscience/autoscience/butane/chem_annotated.cti'
-rmg_gas = ct.Solution(model_cti)
+rmg_gas = ct.Solution(model_path)
 
 # Load the experimental conditions
 ignition_delay_data = '/work/westgroup/harris.se/autoscience/autoscience/butane/butane_ignition_delay.csv'
@@ -111,18 +119,25 @@ def get_ignition_delay(times, T, P, X, plot=False, title='', save=''):
 rmg_tau7 = np.zeros(len(tau7))
 
 # run the simulations
-for i in range(0, len(table7)):
-
+# for i in range(0, len(table7)):
+conditions_index = [7]  # only do the analysis at one set of conditions
+for i in conditions_index:
     X = f'O2(2):{concentrations[i]["O2"]}, butane(1):{concentrations[i]["C4H10"]}, Ar:{concentrations[i]["AR"]},  CO2(7):{concentrations[i]["CO2"]}, N2:{concentrations[i]["N2"]}'
     t, T, P, X = run_simulation(rmg_gas, T7[i], P7[i], X)
 
-    # save the csv
-    data = np.concatenate((np.matrix(t).transpose(), np.matrix(T).transpose(), np.matrix(P).transpose(), X), axis=1)
-    columns = ['t', 'T', 'P'] + rmg_gas.species_names
-    out_df = pd.DataFrame(data=data, columns=columns)
-    csv_name = os.path.join(csv_dir, f'model_{model_number:04}_7-{i:04}.csv')
-    out_df.to_csv(csv_name)
+    index, delay_time = get_ignition_delay(t, T, P, X)
 
-    save_name = os.path.join(img_dir, f'model_{model_number:04}_7-{i:04}.png')
-    index, delay_time = get_ignition_delay(t, T, P, X, plot=True, save=save_name)
-    rmg_tau7[i] = delay_time
+    # write in the following format:
+    # model  conditions_index  ignition delay
+    logger.info(f'{model_number:04} {i} {delay_time}')
+
+    # # save the csv
+    # data = np.concatenate((np.matrix(t).transpose(), np.matrix(T).transpose(), np.matrix(P).transpose(), X), axis=1)
+    # columns = ['t', 'T', 'P'] + rmg_gas.species_names
+    # out_df = pd.DataFrame(data=data, columns=columns)
+    # csv_name = os.path.join(csv_dir, f'model_{model_number:04}_7-{i:04}.csv')
+    # out_df.to_csv(csv_name)
+
+    # save_name = os.path.join(img_dir, f'model_{model_number:04}_7-{i:04}.png')
+    # index, delay_time = get_ignition_delay(t, T, P, X, plot=True, save=save_name)
+    # rmg_tau7[i] = delay_time
