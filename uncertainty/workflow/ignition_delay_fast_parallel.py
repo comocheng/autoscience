@@ -1,7 +1,7 @@
-# Script to run local sensitivity/uncertainty analysis, 20220815
-
+# Script to run ignition delay on a model
 import os
 import concurrent.futures
+
 import numpy as np
 import pandas as pd
 
@@ -47,42 +47,13 @@ def get_ignition_delay(times, T, P, X, plot=False, title='', save=''):
     return i, times[i]
 
 
-def process_model(reaction_number):
-    print(f"Processing Model {reaction_number}")
-    gas = ct.Solution(cti_path)
-    delta = 1.0
-    rxn = gas.reactions()[reaction_number]
-    if hasattr(rxn, 'rate') and type(rxn.rate) == ct._cantera.Arrhenius:
-        new_reaction = gas.reactions()[reaction_number]
-        new_kinetics = ct._cantera.Arrhenius(
-            np.exp(delta) * new_reaction.rate.pre_exponential_factor,
-            new_reaction.rate.temperature_exponent,
-            new_reaction.rate.activation_energy
-        )
-        new_reaction.rate = new_kinetics
-        gas.modify_reaction(reaction_number, new_reaction)
-
-        # run the simulations at condition #7
-        i = 7
-        X = concentrations[i]
-        t, T, P, X = run_simulation(gas, T7[i], P7[i], X)
-
-        index, delay_time = get_ignition_delay(t, T, P, X)
-    else:
-        delay_time = -1
-
-    return delay_time
-
-
-# Load the base model
-basedir = '/work/westgroup/harris.se/autoscience/autoscience/butane'
-cti_path = os.path.join(basedir, 'chem_annotated.cti')
-gas = ct.Solution(cti_path)
-
-# define results location
-result_dir = '/scratch/harris.se/autoscience/local_sensitivity'
-n_ign_delays = len(gas.reactions())
+# result_dir = '/scratch/harris.se/autoscience/uncorrelated/ignition_delays'
+# model_dir = '/scratch/harris.se/autoscience/uncorrelated/models'
+result_dir = '/scratch/harris.se/autoscience/not_correlated/ignition_delays'
+model_dir = '/scratch/harris.se/autoscience/not_correlated/models'
+n_ign_delays = 5000
 delay_times = np.zeros(n_ign_delays)
+
 
 # Load the experimental conditions
 ignition_delay_data = '/work/westgroup/harris.se/autoscience/autoscience/butane/butane_ignition_delay.csv'
@@ -116,16 +87,28 @@ for i in range(0, len(table7)):
     conc_dict['CO2(7)'] = x_CO2
     concentrations.append(conc_dict)
 
-# Run the Ignitions
+
+def process_model(model_number):
+
+    model_path = os.path.join(model_dir, f'chem_{model_number:04}.yaml')
+    rmg_gas = ct.Solution(model_path)
+
+    # run the simulations
+    X = concentrations[i]
+    t, T, P, X = run_simulation(rmg_gas, T7[i], P7[i], X)
+
+    index, delay_time = get_ignition_delay(t, T, P, X)
+    return delay_time
+
+
 # for i in range(0, len(table7)):
 for i in [7]:  # just do one initial condition
 
-    rxn_indices = np.arange(0, n_ign_delays)
-    # rxn_indices = np.arange(0, 10)
-
-    with concurrent.futures.ProcessPoolExecutor(max_workers=16) as executor:
-        for reaction_index, delay_time in zip(rxn_indices, executor.map(process_model, rxn_indices)):
-            delay_times[reaction_index] = delay_time
+    # for model_number in range(0, n_ign_delays):
+    model_numbers = np.arange(0, 100)
+    with concurrent.futures.ProcessPoolExecutor(max_workers=8) as executor:
+        for model_number, delay_time in zip(model_numbers, executor.map(process_model, model_numbers)):
+            delay_times[model_number] = delay_time
 
     csv_path = os.path.join(result_dir, f'ignition_delays_{i:03}.csv')
     delay_df = pd.DataFrame(delay_times)
