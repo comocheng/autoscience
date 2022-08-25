@@ -1,5 +1,6 @@
 *.png
 *.ipynb_checkpoints
 *.pickle
-
+butane/dft/kinetics
+butane/dft/thermo
 
