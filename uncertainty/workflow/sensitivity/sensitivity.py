@@ -117,10 +117,13 @@ def process_model(model_number):
     return delay_time
 
 
-model_numbers = np.arange(0, n_models)
-with concurrent.futures.ProcessPoolExecutor(max_workers=32) as executor:
-    for model_number, delay_time in zip(model_numbers, executor.map(process_model, model_numbers)):
-        delay_times[model_number] = delay_time
+for i in range(0, 20):
 
-delay_df = pd.DataFrame(delay_times)
-delay_df.to_csv(csv_path)
+    model_numbers = np.arange(100 * i, min(100 * (i + 1), len(delay_times)))
+    # model_numbers = np.arange(0, n_models)
+    with concurrent.futures.ProcessPoolExecutor(max_workers=24) as executor:
+        for model_number, delay_time in zip(model_numbers, executor.map(process_model, model_numbers)):
+            delay_times[model_number] = delay_time
+    # save every 100
+    delay_df = pd.DataFrame(delay_times)
+    delay_df.to_csv(csv_path)
