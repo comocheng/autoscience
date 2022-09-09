@@ -16,6 +16,7 @@ else:
     # cti_path = '/work/westgroup/harris.se/autoscience/autoscience/butane/naive_rmg_model/chem_annotated.cti'
     cti_path = '/scratch/harris.se/autoscience/naive_model/changed_models/chem_2022-08-25.cti'
     #cti_path = '/work/westgroup/harris.se/autoscience/autoscience/butane/improved_models/chem_2022-08-28.cti'    
+    cti_path = '/work/westgroup/harris.se/autoscience/autoscience/butane/improved_models/chem_2022-08-28.cti'    
 
 gas = ct.Solution(cti_path)
 
@@ -54,18 +55,16 @@ x_O2 = x_O2 / total
 x_C4H10 = x_C4H10 / total
 x_N2 = x_N2 / total
 
-#concentrations = [{'C4H10': x_C4H10[i], 'O2': x_O2[i], 'N2': x_N2[i]} for i in range(0, len(equiv_ratios))]
+# concentrations = [{'C4H10': x_C4H10[i], 'O2': x_O2[i], 'N2': x_N2[i]} for i in range(0, len(equiv_ratios))]
 concentrations = [{'butane(1)': x_C4H10[i], 'O2(2)': x_O2[i], 'N2': x_N2[i]} for i in range(0, len(equiv_ratios))]
-
 
 
 # function for running a flame speed
 # assumes gas has been properly initialized
 def run_flame_speed(condition_index):
     gas = ct.Solution(cti_path)
-    
-    gas.TPX = temperatures[condition_index], pressures[condition_index], concentrations[condition_index]
 
+    gas.TPX = temperatures[condition_index], pressures[condition_index], concentrations[condition_index]
 
     tol_ss = [1.0e-13, 1.0e-9]  # abs and rel tolerances for steady state problem
     tol_ts = [1.0e-13, 1.0e-9]  # abs and rel tie tolerances for time step function
@@ -81,7 +80,7 @@ def run_flame_speed(condition_index):
     print("about to solve")
     flame.solve(loglevel=loglevel, auto=True)
     Su = flame.velocity[0]
-    
+
     return Su
 
 
@@ -94,10 +93,8 @@ with concurrent.futures.ProcessPoolExecutor(max_workers=16) as executor:
 
 
 out_df = pd.DataFrame(flame_speeds)
-#out_df.to_csv('aramco_flame_speeds.csv')
+# out_df.to_csv('aramco_flame_speeds.csv')
 
-#out_df.to_csv('naive_improved_flame_speeds.csv')
-#out_df.to_csv('rmg_changed_flame_speeds.csv')
-out_df.to_csv(f'{cti_path[:-4]}.csv)
-
-
+# out_df.to_csv('naive_improved_flame_speeds.csv')
+# out_df.to_csv('rmg_changed_flame_speeds.csv')
+out_df.to_csv(f'{cti_path[:-4]}.csv')
