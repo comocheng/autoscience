@@ -3,4 +3,5 @@
 *.pickle
 butane/dft/kinetics
 butane/dft/thermo
+butane/dft/atom_corrections
 
