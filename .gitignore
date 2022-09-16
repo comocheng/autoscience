@@ -4,4 +4,9 @@
 butane/dft/kinetics
 butane/dft/thermo
 butane/dft/atom_corrections
+*.cti
+slurm-*
+
+chem_*.cti
+delay_*.txt
 
