@@ -23,7 +23,7 @@ gas = ct.Solution(cti_path)
 
 
 # load the experimental conditions
-flame_speed_data = '/work/westgroup/harris.se/autoscience/autoscience/butane/butane_flamespeeds.csv'
+flame_speed_data = '/work/westgroup/harris.se/autoscience/autoscience/butane/experimental_data/butane_flamespeeds.csv'
 df_exp = pd.read_csv(flame_speed_data)
 
 # get just the Park data

@@ -9,4 +9,6 @@ slurm-*
 
 chem_*.cti
 delay_*.txt
+*.inp
+*.npy
 
