@@ -16,3 +16,15 @@ delay_*.txt
 *.npy
 *.csv
 
+
+debug/
+autotst/my_tiny_db/
+butane/models/improved_models/
+butane/models/modifications/
+butane/models/rmg_1week/
+
+butane/dft/no_rotors_thermo/
+
+butane/sensitivity_analysis/base_rmg24/results/flame_speeds/
+
+
