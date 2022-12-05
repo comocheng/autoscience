@@ -6,9 +6,13 @@ butane/dft/thermo
 butane/dft/atom_corrections
 *.cti
 slurm-*
+*/slurm-*
+__pycache__
+
 
 chem_*.cti
 delay_*.txt
 *.inp
 *.npy
+*.csv
 
