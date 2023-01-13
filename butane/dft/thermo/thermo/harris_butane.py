@@ -6108,6 +6108,56 @@ H      -1.07709000    1.47092700    0.34038100
 
 entry(
     index = 130,
+    label = "CCC",
+    molecule = 
+"""
+1  C u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
+2  C u0 p0 c0 {1,S} {6,S} {7,S} {8,S}
+3  C u0 p0 c0 {1,S} {9,S} {10,S} {11,S}
+4  H u0 p0 c0 {1,S}
+5  H u0 p0 c0 {1,S}
+6  H u0 p0 c0 {2,S}
+7  H u0 p0 c0 {2,S}
+8  H u0 p0 c0 {2,S}
+9  H u0 p0 c0 {3,S}
+10 H u0 p0 c0 {3,S}
+11 H u0 p0 c0 {3,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.95679,0.00245285,8.14998e-05,-1.31902e-07,6.96113e-11,-13353.5,6.6763], Tmin=(10,'K'), Tmax=(487.347,'K')),
+            NASAPolynomial(coeffs=[-0.00231793,0.0349388,-1.84599e-05,4.79894e-09,-4.93784e-13,-12967.5,22.9321], Tmin=(487.347,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (-111.05,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (249.434,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+C      -0.01662600    0.61194100   -0.11404400
+C      -1.25623600   -0.26656800    0.00145600
+C       1.26859000   -0.18245600    0.08208900
+H      -0.00142500    1.09614000   -1.09240900
+H      -0.06711200    1.41423300    0.62462700
+H      -1.23861900   -1.06111200   -0.74640700
+H      -2.17206000    0.30663800   -0.13941500
+H      -1.30427600   -0.74002900    0.98336400
+H       1.28528500   -0.65380500    1.06607100
+H       1.35078700   -0.97497200   -0.66340900
+H       2.15179100    0.45008900   -0.00192400
+""",
+)
+
+entry(
+    index = 131,
     label = "C[C](C)C",
     molecule = 
 """
@@ -6162,7 +6212,7 @@ H       0.67234300    1.96315800    0.67720700
 )
 
 entry(
-    index = 131,
+    index = 132,
     label = "CC(C)C",
     molecule = 
 """
@@ -6218,7 +6268,90 @@ H       0.62392400   -2.03283700   -0.52226700
 )
 
 entry(
-    index = 132,
+    index = 133,
+    label = "[S]C=C",
+    molecule = 
+"""
+multiplicity 2
+1 S u1 p2 c0 {2,S}
+2 C u0 p0 c0 {1,S} {3,D} {4,S}
+3 C u0 p0 c0 {2,D} {5,S} {6,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {3,S}
+6 H u0 p0 c0 {3,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.06035,-0.00571657,8.32848e-05,-1.47424e-07,8.52268e-11,26234.6,8.43117], Tmin=(10,'K'), Tmax=(538.99,'K')),
+            NASAPolynomial(coeffs=[2.12688,0.0184503,-1.12947e-05,3.35562e-09,-3.84866e-13,26300.4,15.2411], Tmin=(538.99,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (218.121,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (133.032,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+S       1.72477600    0.10396600    1.17952700
+C       0.57111800    0.06679500   -0.11983900
+C      -0.74320500   -0.07628300   -0.01238800
+H       1.04117400    0.17729100   -1.09335100
+H      -1.36043700   -0.08403600   -0.89878100
+H      -1.23342600   -0.18783400    0.94483200
+""",
+)
+
+entry(
+    index = 134,
+    label = "SC=C",
+    molecule = 
+"""
+1 S u0 p2 c0 {2,S} {7,S}
+2 C u0 p0 c0 {1,S} {3,D} {4,S}
+3 C u0 p0 c0 {2,D} {5,S} {6,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {3,S}
+6 H u0 p0 c0 {3,S}
+7 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.95668,0.0028362,6.96892e-05,-1.5076e-07,1.02269e-10,9035.27,8.46217], Tmin=(10,'K'), Tmax=(468.353,'K')),
+            NASAPolynomial(coeffs=[2.9259,0.0199876,-1.19779e-05,3.54433e-09,-4.10177e-13,9040.26,11.6758], Tmin=(468.353,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (75.1152,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (153.818,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 2
+
+Geometry:
+S       1.52537700    0.05823600   -0.81051100
+C       0.07398800    0.28505900    0.16430800
+C      -1.13191300    0.42791200   -0.36270100
+H       0.23093700    0.33821400    1.23271300
+H      -1.30098700    0.37427900   -1.43004900
+H      -1.98680500    0.60857900    0.27281600
+H       2.32706100   -0.32003900    0.19083000
+""",
+)
+
+entry(
+    index = 135,
     label = "CC[S]",
     molecule = 
 """
@@ -6263,7 +6396,7 @@ H       1.03637600   -1.07710900   -0.34191500
 )
 
 entry(
-    index = 133,
+    index = 136,
     label = "CC=S",
     molecule = 
 """
@@ -6305,7 +6438,7 @@ H       1.15523000    1.07234400    0.41903400
 )
 
 entry(
-    index = 134,
+    index = 137,
     label = "C=C[CH]C=C",
     molecule = 
 """
@@ -6358,7 +6491,7 @@ H       2.50089200    1.79111300    0.15935400
 )
 
 entry(
-    index = 135,
+    index = 138,
     label = "C=CCC=C",
     molecule = 
 """
@@ -6412,7 +6545,7 @@ H      -0.29200300    1.59649200   -1.25904400
 )
 
 entry(
-    index = 136,
+    index = 139,
     label = "[CH2]C(C)C",
     molecule = 
 """
@@ -6467,7 +6600,7 @@ H       0.17676000   -2.20539600    0.48022200
 )
 
 entry(
-    index = 137,
+    index = 140,
     label = "C=C(C)C",
     molecule = 
 """
@@ -6519,7 +6652,46 @@ H      -1.61619500   -1.55604400   -0.52202000
 )
 
 entry(
-    index = 138,
+    index = 141,
+    label = "C[S]",
+    molecule = 
+"""
+multiplicity 2
+1 S u1 p2 c0 {2,S}
+2 C u0 p0 c0 {1,S} {3,S} {4,S} {5,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.02517,-0.00333886,5.53959e-05,-1.09208e-07,7.45472e-11,13203.2,6.80091], Tmin=(10,'K'), Tmax=(370.869,'K')),
+            NASAPolynomial(coeffs=[2.61175,0.0119057,-6.26187e-06,1.62729e-09,-1.66807e-13,13308.1,12.2179], Tmin=(370.869,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (109.771,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (108.088,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+S       1.65460200    0.06812500   -0.03328700
+C      -0.13629600   -0.02942600    0.00392900
+H      -0.52437700   -0.57548800   -0.85221900
+H      -0.49210400   -0.46213000    0.93560900
+H      -0.50172500    0.99881900   -0.05403400
+""",
+)
+
+entry(
+    index = 142,
     label = "CS",
     molecule = 
 """
@@ -6559,7 +6731,7 @@ H       1.85743000    0.20420800    0.31017900
 )
 
 entry(
-    index = 139,
+    index = 143,
     label = "[S]S",
     molecule = 
 """
@@ -6594,7 +6766,136 @@ H      -1.13694600   -0.42377600    0.00000000
 )
 
 entry(
-    index = 140,
+    index = 144,
+    label = "SS",
+    molecule = 
+"""
+1 S u0 p2 c0 {2,S} {3,S}
+2 S u0 p2 c0 {1,S} {4,S}
+3 H u0 p0 c0 {1,S}
+4 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.97327,0.00153505,2.99489e-05,-5.78271e-08,3.30897e-11,1480.26,7.73119], Tmin=(10,'K'), Tmax=(587.436,'K')),
+            NASAPolynomial(coeffs=[3.7131,0.00962843,-6.85997e-06,2.26643e-09,-2.8139e-13,1401.75,7.91949], Tmin=(587.436,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (12.296,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (78.9875,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 2
+
+Geometry:
+S      -0.77333500    0.03243400   -0.54433500
+S       0.65467300    0.62120100    0.82368600
+H      -1.79786200   -0.11897900    0.31035300
+H       1.13458700   -0.59587600    1.12613400
+""",
+)
+
+entry(
+    index = 145,
+    label = "C=CC=CC",
+    molecule = 
+"""
+1  C u0 p0 c0 {2,S} {6,S} {7,S} {8,S}
+2  C u0 p0 c0 {1,S} {3,D} {9,S}
+3  C u0 p0 c0 {2,D} {4,S} {11,S}
+4  C u0 p0 c0 {3,S} {5,D} {10,S}
+5  C u0 p0 c0 {4,D} {12,S} {13,S}
+6  H u0 p0 c0 {1,S}
+7  H u0 p0 c0 {1,S}
+8  H u0 p0 c0 {1,S}
+9  H u0 p0 c0 {2,S}
+10 H u0 p0 c0 {4,S}
+11 H u0 p0 c0 {3,S}
+12 H u0 p0 c0 {5,S}
+13 H u0 p0 c0 {5,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.88731,0.00951248,0.000141333,-3.3118e-07,2.52765e-10,8426.79,9.32705], Tmin=(10,'K'), Tmax=(334.936,'K')),
+            NASAPolynomial(coeffs=[0.693644,0.0476536,-2.94826e-05,8.8203e-09,-1.01785e-12,8640.72,21.2413], Tmin=(334.936,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (70.068,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (299.321,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+C      -1.73834200    0.55680200    0.18405300
+C      -1.16564000   -0.76346800   -0.21407900
+C      -1.87780900   -1.86118800   -0.45848600
+C      -1.29380100   -3.13734500   -0.84555600
+C      -2.00011100   -4.23671100   -1.09082500
+H      -2.82426300    0.51100700    0.25077700
+H      -1.34718100    0.87661400    1.15187500
+H      -1.47008700    1.33231500   -0.53609400
+H      -0.08437100   -0.81873200   -0.30782100
+H      -0.21186000   -3.16446400   -0.93175600
+H      -2.96053200   -1.82684800   -0.37028900
+H      -3.08046500   -4.23615800   -1.01190900
+H      -1.52531600   -5.16463300   -1.37592600
+""",
+)
+
+entry(
+    index = 146,
+    label = "[CH2]S",
+    molecule = 
+"""
+multiplicity 2
+1 S u0 p2 c0 {2,S} {5,S}
+2 C u1 p0 c0 {1,S} {3,S} {4,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.94873,0.00495374,6.81319e-05,-3.0096e-07,4.03272e-10,18374.9,7.47881], Tmin=(10,'K'), Tmax=(255.596,'K')),
+            NASAPolynomial(coeffs=[4.06231,0.0103574,-5.72398e-06,1.59959e-09,-1.77704e-13,18345.7,6.62693], Tmin=(255.596,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (152.783,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (108.088,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 2
+
+Geometry:
+S       1.04535000    0.30359600    0.61065300
+C      -0.62363500   -0.10685800    0.64534700
+H      -1.02881700   -0.86112400   -0.00501300
+H      -1.20503600    0.30072900    1.45391800
+H       1.37898600   -0.38868300   -0.48564500
+""",
+)
+
+entry(
+    index = 147,
     label = "C=S",
     molecule = 
 """
@@ -6630,7 +6931,7 @@ H      -0.77537400   -0.84922300    0.02773400
 )
 
 entry(
-    index = 141,
+    index = 148,
     label = "C=C=C",
     molecule = 
 """
@@ -6672,7 +6973,155 @@ H      -1.87453400    0.59286200   -0.61815900
 )
 
 entry(
-    index = 142,
+    index = 149,
+    label = "C[CH]S",
+    molecule = 
+"""
+multiplicity 2
+1 S u0 p2 c0 {3,S} {8,S}
+2 C u0 p0 c0 {3,S} {4,S} {5,S} {6,S}
+3 C u1 p0 c0 {1,S} {2,S} {7,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {2,S}
+6 H u0 p0 c0 {2,S}
+7 H u0 p0 c0 {3,S}
+8 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.71509,0.0289989,-8.41701e-05,1.84965e-07,-1.44183e-10,14540.6,9.94688], Tmin=(10,'K'), Tmax=(444.46,'K')),
+            NASAPolynomial(coeffs=[2.81586,0.0224414,-1.25965e-05,3.44645e-09,-3.68423e-13,14765.2,15.1838], Tmin=(444.46,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (120.891,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (174.604,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 2
+
+Geometry:
+S       1.78717700   -0.45685100   -0.76611900
+C       0.26843400   -0.13879700    1.58721300
+C       0.40500300   -0.74479300    0.23690200
+H       0.44427500    0.93924200    1.55581400
+H       0.98559400   -0.55932200    2.30194600
+H      -0.73210300   -0.30463700    1.98431600
+H      -0.14542300   -1.63322300   -0.03218300
+H       2.11800400    0.73823300   -0.25415900
+""",
+)
+
+entry(
+    index = 150,
+    label = "CCS",
+    molecule = 
+"""
+1 S u0 p2 c0 {2,S} {9,S}
+2 C u0 p0 c0 {1,S} {3,S} {4,S} {5,S}
+3 C u0 p0 c0 {2,S} {6,S} {7,S} {8,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {2,S}
+6 H u0 p0 c0 {3,S}
+7 H u0 p0 c0 {3,S}
+8 H u0 p0 c0 {3,S}
+9 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.81571,0.0143938,1.67722e-05,-3.27347e-08,1.57735e-11,-6494.64,9.75715], Tmin=(10,'K'), Tmax=(564.256,'K')),
+            NASAPolynomial(coeffs=[2.17713,0.0260097,-1.41073e-05,3.74951e-09,-3.91264e-13,-6309.72,16.7247], Tmin=(564.256,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (-54.0278,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (199.547,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 2
+
+Geometry:
+S       1.88717800   -0.12734000    0.22174500
+C       0.17405000   -0.74713800    0.21045300
+C      -0.26089300   -1.30405300   -1.13372700
+H       0.16464700   -1.52399200    0.97347300
+H      -0.49025900    0.04573700    0.54727200
+H       0.40456800   -2.10437300   -1.45277300
+H      -1.27699000   -1.69673800   -1.07510700
+H      -0.24380700   -0.52705500   -1.89795100
+H       1.71019000    0.81485600   -0.71501100
+""",
+)
+
+entry(
+    index = 151,
+    label = "[CH2]C(C)C=C",
+    molecule = 
+"""
+multiplicity 2
+1  C u0 p0 c0 {2,S} {3,S} {4,S} {6,S}
+2  C u0 p0 c0 {1,S} {7,S} {8,S} {9,S}
+3  C u0 p0 c0 {1,S} {5,D} {10,S}
+4  C u1 p0 c0 {1,S} {11,S} {12,S}
+5  C u0 p0 c0 {3,D} {13,S} {14,S}
+6  H u0 p0 c0 {1,S}
+7  H u0 p0 c0 {2,S}
+8  H u0 p0 c0 {2,S}
+9  H u0 p0 c0 {2,S}
+10 H u0 p0 c0 {3,S}
+11 H u0 p0 c0 {4,S}
+12 H u0 p0 c0 {4,S}
+13 H u0 p0 c0 {5,S}
+14 H u0 p0 c0 {5,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.86113,0.0276835,1.67132e-05,-3.06028e-08,1.06671e-11,20458.2,10.3446], Tmin=(10,'K'), Tmax=(1104.93,'K')),
+            NASAPolynomial(coeffs=[6.33211,0.0359019,-1.77444e-05,4.24609e-09,-3.98608e-13,18864.4,-6.5642], Tmin=(1104.93,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (170.15,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (320.107,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 2
+
+Geometry:
+C      -0.29995700    0.10819300    0.38366200
+C      -1.38191300   -0.92437400    0.06655300
+C       0.90574100   -0.09769000   -0.50171400
+C      -0.80968700    1.50002700    0.20745600
+C       2.13712300   -0.31842700   -0.06784700
+H       0.03097900   -0.02258400    1.41869100
+H      -1.70139000   -0.82645200   -0.97289700
+H      -2.25417600   -0.77485700    0.70275100
+H      -1.00967000   -1.93744000    0.21262400
+H       0.70965500   -0.03991300   -1.56941700
+H      -0.24891300    2.33677600    0.59573900
+H      -1.62475000    1.70109300   -0.47354100
+H       2.35669200   -0.37594800    0.99176600
+H       2.96473600   -0.44965300   -0.75145900
+""",
+)
+
+entry(
+    index = 152,
     label = "C=CC(=C)C",
     molecule = 
 """
@@ -6726,7 +7175,7 @@ H      -1.12794900    2.28116000   -0.06176200
 )
 
 entry(
-    index = 143,
+    index = 153,
     label = "[CH2]C(C=C)C=C",
     molecule = 
 """
@@ -6785,7 +7234,7 @@ H      -1.27261200    1.71942000    1.53744900
 )
 
 entry(
-    index = 144,
+    index = 154,
     label = "C=CC(=C)C=C",
     molecule = 
 """
@@ -6841,7 +7290,7 @@ H       2.98924900    0.02344700   -1.23954000
 )
 
 entry(
-    index = 145,
+    index = 155,
     label = "[NH2]",
     molecule = 
 """
@@ -6876,7 +7325,7 @@ H       0.80313000   -0.20921300   -0.00000000
 )
 
 entry(
-    index = 146,
+    index = 156,
     label = "N",
     molecule = 
 """
@@ -6912,7 +7361,7 @@ H      -0.28283300    0.89315500   -0.10084300
 )
 
 entry(
-    index = 147,
+    index = 157,
     label = "[N]=N",
     molecule = 
 """
@@ -6947,7 +7396,641 @@ H      -0.91884400   -0.22513200    0.00000000
 )
 
 entry(
-    index = 148,
+    index = 158,
+    label = "[N]=O",
+    molecule = 
+"""
+multiplicity 2
+1 O u0 p2 c0 {2,D}
+2 N u1 p1 c0 {1,D}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.50531,-0.000279909,5.60503e-07,1.50804e-09,-1.34805e-12,11006.1,4.7277], Tmin=(10,'K'), Tmax=(727.344,'K')),
+            NASAPolynomial(coeffs=[2.93046,0.00157024,-5.50933e-07,4.82118e-11,5.63078e-15,11124.4,7.55644], Tmin=(727.344,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (91.5117,'kJ/mol'),
+        Cp0 = (29.1007,'J/(mol*K)'),
+        CpInf = (37.4151,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+O       0.56875300    0.00000000    0.00000000
+N      -0.56875300    0.00000000    0.00000000
+""",
+)
+
+entry(
+    index = 159,
+    label = "N=O",
+    molecule = 
+"""
+1 O u0 p2 c0 {2,D}
+2 N u0 p1 c0 {1,D} {3,S}
+3 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.01515,-0.000844773,2.71736e-06,3.13138e-09,-3.77545e-12,13842,3.73819], Tmin=(10,'K'), Tmax=(674.802,'K')),
+            NASAPolynomial(coeffs=[2.54737,0.00452321,-1.80717e-06,2.82831e-10,-8.75553e-15,14116,10.8043], Tmin=(674.802,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (115.096,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (58.2013,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+O       0.94422800   -0.19559800    0.00000000
+N      -0.06511800    0.43482100    0.00000000
+H      -0.87911000   -0.23922300    0.00000000
+""",
+)
+
+entry(
+    index = 160,
+    label = "[N]N",
+    molecule = 
+"""
+multiplicity 3
+1 N u0 p1 c0 {2,S} {3,S} {4,S}
+2 N u2 p1 c0 {1,S}
+3 H u0 p0 c0 {1,S}
+4 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.04874,-0.00361926,2.98335e-05,-4.03989e-08,1.81875e-11,42490.2,5.32332], Tmin=(10,'K'), Tmax=(667.87,'K')),
+            NASAPolynomial(coeffs=[2.58178,0.00842737,-4.54604e-06,1.22897e-09,-1.31217e-13,42613.4,11.2639], Tmin=(667.87,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (353.29,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (83.1447,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 3
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+N      -0.08678700    0.00403800    0.23039000
+N       1.21898500   -0.04545600   -0.05317200
+H      -0.59718600   -0.81778800   -0.08568400
+H      -0.53491200    0.85920600   -0.09153400
+""",
+)
+
+entry(
+    index = 161,
+    label = "[NH]N",
+    molecule = 
+"""
+multiplicity 2
+1 N u0 p1 c0 {2,S} {3,S} {4,S}
+2 N u1 p1 c0 {1,S} {5,S}
+3 H u0 p0 c0 {1,S}
+4 H u0 p0 c0 {1,S}
+5 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.05317,-0.00460992,4.97975e-05,-8.18652e-08,4.57619e-11,26627,5.94768], Tmin=(10,'K'), Tmax=(515.066,'K')),
+            NASAPolynomial(coeffs=[2.34345,0.011625,-6.09509e-06,1.62578e-09,-1.73174e-13,26763.9,12.6809], Tmin=(515.066,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (221.391,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (108.088,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 2
+
+Geometry:
+N      -0.43898700   -0.02936200    0.17813000
+N       0.89204600   -0.11008300    0.32599900
+H      -0.77982000    0.91017000    0.05317400
+H      -0.94516200   -0.73622400   -0.33763900
+H       1.12213200   -1.10022700    0.23096400
+""",
+)
+
+entry(
+    index = 162,
+    label = "N=N",
+    molecule = 
+"""
+1 N u0 p1 c0 {2,D} {3,S}
+2 N u0 p1 c0 {1,D} {4,S}
+3 H u0 p0 c0 {1,S}
+4 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.03139,-0.0019046,8.09023e-06,3.97441e-09,-8.29605e-12,24980.4,3.42231], Tmin=(10,'K'), Tmax=(598.885,'K')),
+            NASAPolynomial(coeffs=[1.53403,0.00883602,-3.93511e-06,8.00927e-10,-5.85292e-14,25386.1,15.0795], Tmin=(598.885,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (207.71,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (83.1447,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+N      -0.46755900    0.38012700    0.12134800
+N       0.46805000   -0.38095100   -0.12161100
+H      -1.33497100   -0.15185800   -0.04784900
+H       1.33448000    0.15268200    0.04811200
+""",
+)
+
+entry(
+    index = 163,
+    label = "NN",
+    molecule = 
+"""
+1 N u0 p1 c0 {2,S} {3,S} {4,S}
+2 N u0 p1 c0 {1,S} {5,S} {6,S}
+3 H u0 p0 c0 {1,S}
+4 H u0 p0 c0 {1,S}
+5 H u0 p0 c0 {2,S}
+6 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.04885,-0.00431224,5.90762e-05,-9.98167e-08,5.71816e-11,11868.1,5.63607], Tmin=(10,'K'), Tmax=(495.455,'K')),
+            NASAPolynomial(coeffs=[2.02983,0.014895,-7.87501e-06,2.11268e-09,-2.25978e-13,12032.5,13.5987], Tmin=(495.455,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (98.6768,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (128.874,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 2
+
+Geometry:
+N      -0.71867300   -0.03372800   -0.27075100
+N       0.69592600   -0.08967300   -0.09288100
+H      -1.20290700   -0.69768200    0.32269600
+H      -1.02272500    0.89365000   -0.00882000
+H       1.05851000   -0.76839100   -0.74802600
+H       0.94959700   -0.39533000    0.83986100
+""",
+)
+
+entry(
+    index = 164,
+    label = "N[O]",
+    molecule = 
+"""
+multiplicity 2
+1 O u1 p2 c0 {2,S}
+2 N u0 p1 c0 {1,S} {3,S} {4,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.93784,0.00516606,-8.03314e-06,1.52114e-08,-9.43997e-12,6467.42,4.95283], Tmin=(10,'K'), Tmax=(635.099,'K')),
+            NASAPolynomial(coeffs=[3.08662,0.00678324,-3.00984e-06,6.56138e-10,-5.65343e-14,6651.05,9.26754], Tmin=(635.099,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (53.7694,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (83.1447,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+O       1.19791500   -0.07724300   -0.00575400
+N      -0.06369700    0.00393700    0.05909700
+H      -0.62330000   -0.83596600   -0.02887400
+H      -0.51081800    0.90917100   -0.02446900
+""",
+)
+
+entry(
+    index = 165,
+    label = "NO",
+    molecule = 
+"""
+1 O u0 p2 c0 {2,S} {5,S}
+2 N u0 p1 c0 {1,S} {3,S} {4,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.0487,-0.00341039,4.00593e-05,-5.35143e-08,2.27504e-11,-5182.1,4.80818], Tmin=(10,'K'), Tmax=(743.768,'K')),
+            NASAPolynomial(coeffs=[2.13573,0.0137843,-8.54726e-06,2.53872e-09,-2.87101e-13,-5088.58,12.1866], Tmin=(743.768,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (-43.0776,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (103.931,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+O       0.86975900   -0.18246200    0.45738900
+N      -0.54438500   -0.02832600    0.36364400
+H      -0.91380100   -0.94153400    0.60936300
+H      -0.78267400    0.58305000    1.13832500
+H       1.17386100    0.09156200   -0.41005300
+""",
+)
+
+entry(
+    index = 166,
+    label = "[NH]O",
+    molecule = 
+"""
+multiplicity 2
+1 O u0 p2 c0 {2,S} {4,S}
+2 N u1 p1 c0 {1,S} {3,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.05524,-0.00330493,2.51032e-05,-2.70857e-08,9.3155e-12,10978.5,5.02344], Tmin=(10,'K'), Tmax=(899.398,'K')),
+            NASAPolynomial(coeffs=[1.65828,0.0116087,-6.86299e-06,1.86689e-09,-1.93804e-13,11237.6,15.3769], Tmin=(899.398,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (91.2955,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (78.9875,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+O      -0.62091500   -0.26582100    0.34777500
+N       0.42189900    0.58683000    0.20572300
+H       1.06532600    0.23521800    0.92142600
+H      -1.26240100    0.02443100   -0.30958000
+""",
+)
+
+entry(
+    index = 167,
+    label = "C=[N]",
+    molecule = 
+"""
+multiplicity 2
+1 N u1 p1 c0 {2,D}
+2 C u0 p0 c0 {1,D} {3,S} {4,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.06553,-0.00295584,2.12159e-05,-2.22418e-08,7.50986e-12,28533.2,3.89117], Tmin=(10,'K'), Tmax=(929.485,'K')),
+            NASAPolynomial(coeffs=[2.40786,0.00850583,-4.26536e-06,1.04406e-09,-1.00639e-13,28654.4,10.7615], Tmin=(929.485,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (237.261,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (83.1447,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+N       1.19298900   -0.09583200   -0.09427600
+C      -0.02471200    0.00198300    0.09996900
+H      -0.55534700   -0.70398200    0.74782800
+H      -0.61292900    0.79783200   -0.36942200
+""",
+)
+
+entry(
+    index = 168,
+    label = "C#N",
+    molecule = 
+"""
+1 N u0 p1 c0 {2,T}
+2 C u0 p0 c0 {1,T} {3,S}
+3 H u0 p0 c0 {2,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.53766,-0.00374996,3.84288e-05,-7.71411e-08,5.23685e-11,15714.1,4.01436], Tmin=(10,'K'), Tmax=(454.375,'K')),
+            NASAPolynomial(coeffs=[2.93482,0.00515116,-2.821e-06,7.90172e-10,-8.81514e-14,15731.8,6.0389], Tmin=(454.375,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (130.654,'kJ/mol'),
+        Cp0 = (29.1007,'J/(mol*K)'),
+        CpInf = (62.3585,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+N       1.01241700    0.09274200   -0.00000000
+C      -0.02317000   -0.39000300   -0.00000000
+H      -0.98924400   -0.84034400   -0.00000000
+""",
+)
+
+entry(
+    index = 169,
+    label = "C=N",
+    molecule = 
+"""
+1 N u0 p1 c0 {2,D} {5,S}
+2 C u0 p0 c0 {1,D} {3,S} {4,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.08212,-0.0048536,3.07875e-05,-3.10148e-08,1.01717e-11,10747.8,4.36417], Tmin=(10,'K'), Tmax=(926.499,'K')),
+            NASAPolynomial(coeffs=[0.889939,0.0137084,-7.00346e-06,1.74667e-09,-1.71008e-13,11134.1,18.4137], Tmin=(926.499,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (89.3842,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (108.088,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+N       0.81738500   -0.40647500    0.17801900
+C      -0.38380100   -0.05625500    0.02714700
+H      -1.17375900   -0.73864800    0.33698300
+H      -0.70380900    0.89754600   -0.39870300
+H       1.44958300    0.32309300   -0.15216100
+""",
+)
+
+entry(
+    index = 170,
+    label = "[CH]=N",
+    molecule = 
+"""
+multiplicity 2
+1 N u0 p1 c0 {2,D} {4,S}
+2 C u1 p0 c0 {1,D} {3,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.03654,-0.00287879,2.11239e-05,-1.44209e-08,-5.95296e-12,32588.9,4.52514], Tmin=(10,'K'), Tmax=(418.503,'K')),
+            NASAPolynomial(coeffs=[2.35456,0.00875113,-4.62387e-06,1.20847e-09,-1.24498e-13,32768.6,11.6398], Tmin=(418.503,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (270.959,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (83.1447,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+N      -0.55562700   -0.33220900   -0.03711900
+C       0.49439000    0.29459600    0.03293700
+H       1.49626500   -0.14588700    0.00092700
+H      -1.43502800    0.18340000    0.00325500
+""",
+)
+
+entry(
+    index = 171,
+    label = "C[NH]",
+    molecule = 
+"""
+multiplicity 2
+1 N u1 p1 c0 {2,S} {6,S}
+2 C u0 p0 c0 {1,S} {3,S} {4,S} {5,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {2,S}
+6 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.9972,1.1561e-05,2.5664e-05,-2.96943e-08,1.09997e-11,20845.1,5.8843], Tmin=(10,'K'), Tmax=(705.218,'K')),
+            NASAPolynomial(coeffs=[1.23515,0.015677,-7.65432e-06,1.80074e-09,-1.64649e-13,21234.7,18.2451], Tmin=(705.218,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (173.315,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (128.874,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+N       0.94611800   -0.48459300   -0.35028500
+C      -0.37012800    0.00882300   -0.04273900
+H      -0.61500900   -0.14252900    1.01587700
+H      -0.44254600    1.08882200   -0.22143200
+H      -1.11779400   -0.49685000   -0.65018000
+H       1.59935900    0.02632700    0.24885900
+""",
+)
+
+entry(
+    index = 172,
+    label = "[CH2]N",
+    molecule = 
+"""
+multiplicity 2
+1 N u0 p1 c0 {2,S} {5,S} {6,S}
+2 C u1 p0 c0 {1,S} {3,S} {4,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {1,S}
+6 H u0 p0 c0 {1,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.07099,-0.00708686,8.98879e-05,-1.79274e-07,1.21466e-10,17442.3,5.50233], Tmin=(10,'K'), Tmax=(440.869,'K')),
+            NASAPolynomial(coeffs=[2.3077,0.0153418,-8.30085e-06,2.28656e-09,-2.50918e-13,17535.3,11.8563], Tmin=(440.869,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (145.023,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (133.032,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+N      -0.73389300   -0.00480600   -0.25231200
+C       0.62245900    0.27354200   -0.39123000
+H       0.87823300    1.23804900   -0.80099300
+H       1.26810400   -0.56421500   -0.60339600
+H      -0.94723900   -0.85108000    0.25198000
+H      -1.29703300    0.76459800    0.07507000
+""",
+)
+
+entry(
+    index = 173,
+    label = "[O-][N+]=C",
+    molecule = 
+"""
+multiplicity 2
+1 O u0 p3 c-1 {2,S}
+2 N u1 p0 c+1 {1,S} {3,D}
+3 C u0 p0 c0 {2,D} {4,S} {5,S}
+4 H u0 p0 c0 {3,S}
+5 H u0 p0 c0 {3,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[4.05209,-0.00457452,5.66363e-05,-9.24033e-08,4.96923e-11,17276,6.92635], Tmin=(10,'K'), Tmax=(563.372,'K')),
+            NASAPolynomial(coeffs=[2.18554,0.0143005,-8.58896e-06,2.4954e-09,-2.80479e-13,17397.1,14.0685], Tmin=(563.372,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (143.64,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (108.088,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 2
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+O       1.77704300    0.24248100   -0.08980100
+N       0.72857200   -0.35844000   -0.07215100
+C      -0.49821400   -0.04210100    0.02714800
+H      -0.78633900    0.99791600    0.12497000
+H      -1.22116200   -0.83995600    0.00973400
+""",
+)
+
+entry(
+    index = 174,
+    label = "[O-][N+]#C",
+    molecule = 
+"""
+1 O u0 p3 c-1 {2,S}
+2 N u0 p0 c+1 {1,S} {3,T}
+3 C u0 p0 c0 {2,T} {4,S}
+4 H u0 p0 c0 {3,S}
+""",
+    thermo = NASA(
+        polynomials = [
+            NASAPolynomial(coeffs=[3.96229,0.00239663,3.25083e-05,-7.7408e-08,5.35031e-11,19648,-1.97912], Tmin=(10,'K'), Tmax=(510.132,'K')),
+            NASAPolynomial(coeffs=[4.41821,0.00683905,-4.12861e-06,1.27924e-09,-1.57305e-13,19497.2,-4.89428], Tmin=(510.132,'K'), Tmax=(3000,'K')),
+        ],
+        Tmin = (10,'K'),
+        Tmax = (3000,'K'),
+        E0 = (163.353,'kJ/mol'),
+        Cp0 = (33.2579,'J/(mol*K)'),
+        CpInf = (83.1447,'J/(mol*K)'),
+    ),
+    shortDesc = """""",
+    longDesc = 
+"""
+Spin multiplicity: 1
+External symmetry: -1.0
+Optical isomers: 1
+
+Geometry:
+O       1.66339500   -0.00020100   -0.30511500
+N       0.51845200   -0.00005100    0.03754500
+C      -0.58311400    0.00024200    0.36686400
+H      -1.59883300    0.00001000    0.67080500
+""",
+)
+
+entry(
+    index = 175,
     label = "[C]1=CC=CC=C1",
     molecule = 
 """
@@ -6998,7 +8081,7 @@ H      -2.07912200   -1.57333300    0.01173100
 )
 
 entry(
-    index = 149,
+    index = 176,
     label = "C1=CC=CC=C1",
     molecule = 
 """
@@ -7050,7 +8133,7 @@ H      -1.03783900   -2.24092800    0.03009000
 )
 
 entry(
-    index = 150,
+    index = 177,
     label = "C1#CC=CC=C1",
     molecule = 
 """
