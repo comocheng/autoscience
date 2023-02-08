@@ -368,6 +368,14 @@ entry(
 )
 
 entry(
+    index = 595,
+    label = "O(5) + CH2CHO(21) <=> OH(15) + CH2CO(24)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(6.15041e+10,'cm^3/(mol*s)'), n=1.03525, Ea=(-56.6267,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.23907, dn = +|- 0.028163, dEa = +|- 0.153262 kJ/mol"""),
+)
+
+entry(
     index = 650,
     label = "HO2(16) + C4H8(748) <=> O2(2) + SC4H9(183)",
     degeneracy = 1.0,
@@ -397,6 +405,14 @@ entry(
     degeneracy = 1.0,
     elementary_high_p = True,
     kinetics = Arrhenius(A=(24.0418,'cm^3/(mol*s)'), n=2.97336, Ea=(-16.7809,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.00549, dn = +|- 0.000719294, dEa = +|- 0.00391437 kJ/mol"""),
+)
+
+entry(
+    index = 693,
+    label = "O2(2) + C2H4O(703) <=> HO2(16) + CH2CHO(21)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(16589.3,'cm^3/(mol*s)'), n=1.7777, Ea=(-116.513,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.18733, dn = +|- 0.0225589, dEa = +|- 0.122765 kJ/mol"""),
 )
 
 entry(
@@ -792,6 +808,14 @@ entry(
 )
 
 entry(
+    index = 1326,
+    label = "CH2CHO(21) + C3H5O3(72) <=> CH2CO(24) + C3H6O3(73)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(46.3724,'cm^3/(mol*s)'), n=3.09266, Ea=(-11.4596,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.07193, dn = +|- 0.00912557, dEa = +|- 0.049661 kJ/mol"""),
+)
+
+entry(
     index = 1328,
     label = "C3H5O3(72) + CH3O(31) <=> C3H6O3(73) + CH2O(9)",
     degeneracy = 1.0,
@@ -856,6 +880,14 @@ entry(
 )
 
 entry(
+    index = 1428,
+    label = "C3H5O(129) + C3H5O3(72) <=> C3H4O(74) + C3H6O3(73)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(0.00121737,'cm^3/(mol*s)'), n=4.07636, Ea=(-77.666,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.08427, dn = +|- 0.0106296, dEa = +|- 0.0578461 kJ/mol"""),
+)
+
+entry(
     index = 1509,
     label = "CH3OH(30) + C4H7(192) <=> C4H8(188) + CH3O(31)",
     degeneracy = 1.0,
@@ -877,6 +909,22 @@ entry(
     degeneracy = 1.0,
     elementary_high_p = True,
     kinetics = Arrhenius(A=(3.16923,'cm^3/(mol*s)'), n=3.748, Ea=(-106.325,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.00763, dn = +|- 0.000998805, dEa = +|- 0.00543546 kJ/mol"""),
+)
+
+entry(
+    index = 1578,
+    label = "OCHO(38) + C2H4O(703) <=> HOCHO(40) + CH2CHO(21)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(276.023,'cm^3/(mol*s)'), n=2.88384, Ea=(-88.4898,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.01374, dn = +|- 0.00179261, dEa = +|- 0.0097553 kJ/mol"""),
+)
+
+entry(
+    index = 1584,
+    label = "OCHO(38) + OCHO(38) <=> CO2(7) + HOCHO(40)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(1067,'cm^3/(mol*s)'), n=2.8567, Ea=(-98.1722,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.01101, dn = +|- 0.001439, dEa = +|- 0.00783099 kJ/mol"""),
 )
 
 entry(
@@ -981,6 +1029,14 @@ entry(
     degeneracy = 1.0,
     elementary_high_p = True,
     kinetics = Arrhenius(A=(815.523,'cm^3/(mol*s)'), n=2.84763, Ea=(-13.1822,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.04712, dn = +|- 0.00604906, dEa = +|- 0.0329188 kJ/mol"""),
+)
+
+entry(
+    index = 1766,
+    label = "C2H5(33) + S(186) <=> C2H4(11) + S(187)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(20.4718,'cm^3/(mol*s)'), n=3.43119, Ea=(121.392,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.15274, dn = +|- 0.0186748, dEa = +|- 0.101627 kJ/mol"""),
 )
 
 entry(
