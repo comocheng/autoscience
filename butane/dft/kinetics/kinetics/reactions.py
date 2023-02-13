@@ -408,6 +408,14 @@ entry(
 )
 
 entry(
+    index = 692,
+    label = "HO2(16) + C4H8O(766) <=> O2(2) + C4H9O(217)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(3.07163,'cm^3/(mol*s)'), n=3.14413, Ea=(-35.5415,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.17062, dn = +|- 0.0206971, dEa = +|- 0.112633 kJ/mol"""),
+)
+
+entry(
     index = 693,
     label = "O2(2) + C2H4O(703) <=> HO2(16) + CH2CHO(21)",
     degeneracy = 1.0,
@@ -744,6 +752,14 @@ entry(
 )
 
 entry(
+    index = 1242,
+    label = "C3H5O(129) + S(229) <=> C3H4O(74) + S(787)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(23.0846,'cm^3/(mol*s)'), n=2.92393, Ea=(-10.7786,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.03016, dn = +|- 0.00390405, dEa = +|- 0.0212457 kJ/mol"""),
+)
+
+entry(
     index = 1252,
     label = "C4H8(748) + HCO(19) <=> CH2O(9) + C4H7(191)",
     degeneracy = 1.0,
@@ -1037,6 +1053,14 @@ entry(
     degeneracy = 1.0,
     elementary_high_p = True,
     kinetics = Arrhenius(A=(20.4718,'cm^3/(mol*s)'), n=3.43119, Ea=(121.392,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.15274, dn = +|- 0.0186748, dEa = +|- 0.101627 kJ/mol"""),
+)
+
+entry(
+    index = 1773,
+    label = "SC4H9(183) + S(186) <=> C4H8(189) + S(187)",
+    degeneracy = 1.0,
+    elementary_high_p = True,
+    kinetics = Arrhenius(A=(146.035,'cm^3/(mol*s)'), n=2.99326, Ea=(-9.58485,'kJ/mol'), T0=(1,'K'), Tmin=(298,'K'), Tmax=(2500,'K'), comment="""Fitted to 50 data points; dA = *|/ 1.00636, dn = +|- 0.000833539, dEa = +|- 0.00453609 kJ/mol"""),
 )
 
 entry(
